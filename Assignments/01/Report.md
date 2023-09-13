@@ -14,8 +14,4 @@ Here's a table showing the improvements I did to make the application go faster.
 
 ### Initial Review
 
-Looking at [01's profile](01.prof), the hottest function was `Transform::float4::perspectiveDivide() const`, which consumed around 28% of the program's execution time.  There's not a lot in that function, but it does three floating-point divisions, so perhaps that's something to try optimizing.
-
-### Trying to make `perspectiveDivide()` go faster
-
-`perspectiveDivide()` does several divisions by the same value `w`.  A common trick is instead of dividing by the same value multiple times, to compute the value's reciprocal, and multiple by that value.  This assumes that multiplication is a faster operation than division.
+By simply updating the compiler optimization settings, I was able to eventually get a 4.36 increase in performance/process speed, along with a decrease in memory usage by 16KB. The quality of the output was not affected or sacrificed as the resulitng smallest triangle did not change.
