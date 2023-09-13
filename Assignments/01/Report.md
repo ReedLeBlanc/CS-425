@@ -7,8 +7,8 @@ Here's a table showing the improvements I did to make the application go faster.
 | Version | Time | Speedup | Memory (KB) | Changes |
 | :-----: | ---- | :-----: | :------: | ------- |
 | [01](01.cpp) | 10.08s | &mdash; | 1041332 | Initial version - no changes |
-| 02 | 2.31s | 4.36x | 1041316 | Compiled with -O3 for most aggressive optimization |
-| [03](03.cpp) | 3.67 | .99x| 1041844 | using reciprocals as compared to divisions
+| 02 | 3.54s | 2.85x | 1041332 | Compiled with -O1 for basic optimization |
+| 03 | 2.31s | 4.36x | 1041316 | Compiled with -O3 for most aggressive optimization
 
 ## Profiling Analysis
 
