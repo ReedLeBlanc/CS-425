@@ -6,8 +6,8 @@ Here's a table showing the improvements I did to make the application go faster.
 
 | Version | Time | Speedup | Memory (KB) | Changes |
 | :-----: | ---- | :-----: | :------: | ------- |
-| [01](01.cpp) | 10.08s | &mdash; | 1041332 | Initial version - no changes |
-| 02 | 3.54s | 2.85x | 1041332 | Compiled with -O1 for basic optimization |
+| 01 | 3.54s | 2.85x | 1041332 | Initial version - no changes |
+| [02](lychrel_multi_threaded.cpp) | 15.940s | &mdash; | 1041332 | Multi-Threaded to process chunks in parallel |
 | 03 | 2.31s | 4.36x | 1041316 | Compiled with -O3 for most aggressive optimization
 
 ## Profiling Analysis
