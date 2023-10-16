@@ -14,6 +14,6 @@ Here's a table showing the improvements I did to make the application go faster.
 
 ### Initial Review
 
-Was able to get the process multithreaded and running. Minimal increase in run time after testing the updated lychel.cpp. 
+Was able to get the process multithreaded and running. Minimal increase in run time after testing the updated lychel.cpp.\ 
 From there I tried to implement dynamic scheduling but for whatever reason the code will compile and execute but run indefinitely?
 Still working on coming up with a solution
