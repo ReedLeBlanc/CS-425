@@ -8,7 +8,7 @@ Here's a table showing the improvements I did to make the application go faster.
 | :-----: | ---- | :-----: | ------- |
 | [01](lychrel.cpp.orig) | 17.494s | 2.85x | Initial version - no changes |
 | [02](lychrel_multi_threaded.cpp) | 15.940s | &mdash; | Multi-Threaded to process chunks in parallel |
-| 03 | 2.31s | 4.36x | Compiled with -O3 for most aggressive optimization
+| 03 | N/A | N/A | Attempted to run with thread pool with dynamic task distribution
 
 ## Profiling Analysis
 
