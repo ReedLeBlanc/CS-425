@@ -4,6 +4,7 @@
 // These are custom classes that encode the web transactions.  They're
 //   actually quite simple (mostly because we're solving a very limited)
 //   problem.
+#include <thread>
 #include "Connection.h"
 #include "HTTPRequest.h"
 #include "HTTPResponse.h"
@@ -55,8 +56,9 @@ int main(int argc, char* argv[]) {
         //
         //    Here, we merely read that string from the socket into
         //    a string.
-        std::string msg;
-        session >> msg;
+		std::thread(session = std::move(session)) mutable {
+			std::string msg;
+			session >> msg;
 
         // If you want to see the raw "protocol", uncomment the
         //   following line:
@@ -67,7 +69,7 @@ int main(int argc, char* argv[]) {
         //   request parser, HTTPRequest.  The resulting request
         //   contains the type of request, the filename, and other
         //   information.
-        HTTPRequest request(msg);
+			HTTPRequest request(msg);
 
         //  If you want to see the parsed message, just uncomment the
         //    following line:
@@ -88,8 +90,8 @@ int main(int argc, char* argv[]) {
         //   a filesystem), which is the top-level of where all of the
         //   files the server is able to send is located.  We include
         //   that path here, so we're all looking at the same files.
-        const char* root = "/home/faculty/shreiner/public_html/03";
-        HTTPResponse response(request, root);
+			const char* root = "/home/faculty/shreiner/public_html/03";
+			HTTPResponse response(request, root);
 
         //  Again, if you want to see the contents of the response
         //    (specifically, the header, which is human readable, but
@@ -102,6 +104,7 @@ int main(int argc, char* argv[]) {
         //
         // We keep using the same session until we get an empty
         //   message, which indicates this session is over.
-        session << response;
+			session << response;
+		}).detach();
     }
 }
