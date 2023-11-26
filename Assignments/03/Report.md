@@ -12,8 +12,8 @@ Here's a table showing the improvements I did to make the application go faster.
 
 ## Analysis
 
-
 ### Initial Review
 
+Originally tried to make an individual connection go faster however ran into plethora of network errors on blue in the process. Instead worked on encapsulating each connection into a thread which should allow multiple connections to be more efficient.
 
 
